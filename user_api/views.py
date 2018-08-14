@@ -14,7 +14,7 @@ User = get_user_model()
 
 class UserSignupView(CreateAPIView):
     serializer_class = UserSignupSerializer
-    queryset = User.objects.all()
+
 
 
 class UserLoginView(APIView):
@@ -27,4 +27,3 @@ class UserLoginView(APIView):
         if serializer.is_valid(raise_exception=True):
             new_data = serializer.data
             return Response(new_data, HTTP_200_OK)
-    queryset = User.objects.all()
